@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
+import 'package:rickandmorty_unofficial_wiki/app/utils/extensions/context_extensions.dart';
 import '../constants/app_assets.dart';
 import '../constants/app_colors.dart';
 import '../routes/routes.dart';
@@ -164,8 +165,8 @@ class _ViewModelBuilder<T extends ChangeNotifier>
               color: AppColors.black.withOpacity(.5),
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width / 2,
-              height: MediaQuery.of(context).size.width / 2,
+              width: context.width / 2,
+              height: context.width / 2,
               child: const CircularProgressIndicator(
                 backgroundColor: Colors.transparent,
                 color: AppColors.lightBlue,
@@ -173,8 +174,8 @@ class _ViewModelBuilder<T extends ChangeNotifier>
             ),
             Image.asset(
               AppAssets.rickandmortyLogo,
-              width: MediaQuery.of(context).size.width / 3,
-              height: MediaQuery.of(context).size.width / 3,
+              width: context.width / 3,
+              height: context.width / 3,
               alignment: Alignment.center,
               color: AppColors.lightBlue,
             ),

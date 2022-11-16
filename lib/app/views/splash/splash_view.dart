@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rickandmorty_unofficial_wiki/app/constants/app_strings.dart';
+import 'package:rickandmorty_unofficial_wiki/app/utils/extensions/context_extensions.dart';
 
 import '../../common/view_model_builder.dart';
 
@@ -26,13 +28,14 @@ class SplashView extends StatelessWidget {
               children: [
                 Image.asset(
                   AppAssets.rickandmortyLogo,
-                  height: MediaQuery.of(context).size.width / 2,
-                ),
-                const CircularProgressIndicator.adaptive(
-                  backgroundColor: AppColors.white,
+                  height: context.width / 2,
                 ),
                 Text(
-                  "Helllo",
+                  AppStrings.appName,
+                  style: context.headline6?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.white,
+                  ),
                 ),
               ],
             ),
