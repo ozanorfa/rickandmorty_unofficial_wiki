@@ -27,6 +27,21 @@ class {VIEW_NAME}View extends StatelessWidget {
     return ViewModelBuilder<{VIEW_NAME}ViewModel>(
       initViewModel: () => {VIEW_NAME}ViewModel(),
       builder: (context, viewModel) => ScaffoldView(
+        appBar: AppBar(
+          title: const Text("{VIEW_NAME}View"),
+          leading: BackButton(onPressed: viewModel.pop),
+          actions: <Widget>[
+            Padding(
+                padding: EdgeInsets.only(right: context.smallPadding),
+                child: GestureDetector(
+                  onTap: viewModel.onBackToHome,
+                  child: const Icon(
+                    Icons.home,
+                    size: 26.0,
+                  ),
+                )),
+          ],
+        ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

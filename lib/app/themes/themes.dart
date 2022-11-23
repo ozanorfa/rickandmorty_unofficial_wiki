@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/app_colors.dart';
+
 part 'dark_theme.dart';
 part 'light_theme.dart';
 

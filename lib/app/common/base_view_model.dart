@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
+import '../routes/routes.dart';
 import '../utils/mixins/interaction_mixin.dart';
 
 class BaseViewModel<VA> extends ChangeNotifier with InteractionMixin {
@@ -54,5 +55,9 @@ class BaseViewModel<VA> extends ChangeNotifier with InteractionMixin {
       isBusy = false;
       notify();
     }
+  }
+
+  void onBackToHome() {
+    navigate(Routes.selection, clearStack: true);
   }
 }

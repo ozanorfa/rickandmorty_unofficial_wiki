@@ -7,10 +7,6 @@ extension ThemeExtension on BuildContext {
 
   TextTheme get primaryTextTheme => theme.primaryTextTheme;
 
-  BottomAppBarTheme get bottomAppBarTheme => theme.bottomAppBarTheme;
-
-  BottomSheetThemeData get bottomSheetTheme => theme.bottomSheetTheme;
-
   Color get backgroundColor => theme.backgroundColor;
 
   Color get primaryColor => theme.primaryColor;
@@ -61,9 +57,13 @@ extension MediaQueryExtension on BuildContext {
 
   double get _defaultPadding => 16;
 
-  double get _smallPadding => 10;
+  double get smallPadding => 10;
+
+  double get horizontalPadding => 10;
 
   double get bottomPadding => mediaQuery.padding.bottom;
+
+  double get rightPadding => mediaQuery.padding.right;
 
   double get bottomPhoneMargin => mediaQuery.viewPadding.bottom;
 }

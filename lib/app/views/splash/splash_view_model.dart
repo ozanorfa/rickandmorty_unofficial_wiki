@@ -5,7 +5,7 @@ class SplashViewModel extends BaseViewModel {
   @override
   void onBindingCreated() {
     Future.delayed(const Duration(seconds: 2), () async {
-      navigate(Routes.splash, clearStack: true);
+      navigate(Routes.selection, clearStack: true);
     });
   }
 }
