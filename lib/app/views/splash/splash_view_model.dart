@@ -4,6 +4,7 @@ import 'package:rickandmorty_unofficial_wiki/app/views/warning/warning_args.dart
 
 import '../../common/base_view_model.dart';
 import '../../routes/routes.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class SplashViewModel extends BaseViewModel {
   @override
@@ -14,7 +15,7 @@ class SplashViewModel extends BaseViewModel {
   Future<void> _init() async {
     flow(
       () async {
-        if (!(await checkConnectivity())) {
+        if (!kIsWeb && (!(await checkConnectivity()))) {
           navigate(Routes.warning,
               args: WarningArgs(
                   title: AppStrings.warningConnectionTitle,
