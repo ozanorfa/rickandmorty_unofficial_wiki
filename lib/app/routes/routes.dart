@@ -2,5 +2,6 @@
 
 class Routes {
   static const String splash = '/';
+  static const String warning = '/warning';
   static const String selection = '/selection';
 }

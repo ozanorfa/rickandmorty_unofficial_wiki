@@ -14,8 +14,7 @@ class {VIEW_NAME}ViewModel extends BaseViewModel {
 import 'package:flutter/material.dart';
 
 import '../../common/view_model_builder.dart';
-import '../../common/widget/reusable_gradient_app_bar.dart';
-import '../../common/widget/scaffold_view.dart';
+import '../../common/widgets/scaffold_view.dart';
 import '../../utils/extensions/context_extensions.dart';
 import '{SNAKE_NAME}_view_model.dart';
 
@@ -42,29 +41,18 @@ class {VIEW_NAME}View extends StatelessWidget {
                 )),
           ],
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ReusableGradientAppBar(
-              title: '{VIEW_NAME}View',
-              onBackPressed: viewModel.pop,
+        body:  SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: context.horizontalPadding,
             ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: context.horizontalPadding,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: const [
-                      // START HERE
-                    ],
-                  ),
-                ),
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: const [
+                // START HERE
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

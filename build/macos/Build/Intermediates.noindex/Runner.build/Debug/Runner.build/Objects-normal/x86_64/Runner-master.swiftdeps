@@ -1,8 +1,0 @@
-version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
-options: "63e9ea644aa0a33de3b9f0e262047f597011da2ec3e5bb5a1d7642bf6943a751"
-build_start_time: [1668613163, 589432001]
-build_end_time: [1668613165, 667093992]
-inputs:
-  "/Users/ozanorfa/Desktop/rickandmorty_unofficial_wiki/macos/Flutter/GeneratedPluginRegistrant.swift": [1668613154, 255199193]
-  "/Users/ozanorfa/Desktop/rickandmorty_unofficial_wiki/macos/Runner/AppDelegate.swift": [1633960404, 460194826]
-  "/Users/ozanorfa/Desktop/rickandmorty_unofficial_wiki/macos/Runner/MainFlutterWindow.swift": [1633960404, 463801383]

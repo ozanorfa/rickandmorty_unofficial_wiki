@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rickandmorty_unofficial_wiki/app/common/widgets/selection_item_view.dart';
+import 'package:rickandmorty_unofficial_wiki/app/constants/app_assets.dart';
 import 'package:rickandmorty_unofficial_wiki/app/constants/app_strings.dart';
 
 import '../../common/view_model_builder.dart';
@@ -17,25 +19,30 @@ class SelectionView extends StatelessWidget {
         appBar: AppBar(
           title: Text(AppStrings.appName),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: context.horizontalPadding,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: const [
-                      // START HERE
-                    ],
-                  ),
-                ),
-              ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: context.horizontalPadding,
             ),
-          ],
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SelectionItemView(
+                    title: AppStrings.episodes,
+                    iconPath: AppAssets.uber,
+                    onPressed: viewModel.onPressedEpisodes),
+                SelectionItemView(
+                    title: AppStrings.characters,
+                    iconPath: AppAssets.reddit,
+                    onPressed: viewModel.onPressedCharacters),
+                SelectionItemView(
+                    title: AppStrings.locations,
+                    iconPath: AppAssets.maps,
+                    onPressed: viewModel.onPressedLocations),
+              ],
+            ),
+          ),
         ),
       ),
     );

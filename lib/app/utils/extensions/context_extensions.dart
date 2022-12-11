@@ -55,7 +55,7 @@ extension MediaQueryExtension on BuildContext {
 
   double get height => mediaQuery.size.height;
 
-  double get _defaultPadding => 16;
+  double get defaultPadding => 16;
 
   double get smallPadding => 10;
 

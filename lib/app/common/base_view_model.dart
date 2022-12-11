@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import '../routes/routes.dart';
 import '../utils/mixins/interaction_mixin.dart';
@@ -55,6 +56,11 @@ class BaseViewModel<VA> extends ChangeNotifier with InteractionMixin {
       isBusy = false;
       notify();
     }
+  }
+
+  Future<bool> checkConnectivity() async {
+    bool result = await InternetConnectionChecker().hasConnection;
+    return result;
   }
 
   void onBackToHome() {
