@@ -13,6 +13,8 @@ class BaseViewModel<VA> extends ChangeNotifier with InteractionMixin {
   bool _isBusy = false;
   bool mounted = false;
 
+  RegExp exp = RegExp(r"S(\d+)E(\d+)");
+
   bool get isBusy => _isBusy;
 
   set isBusy(bool value) {
@@ -65,5 +67,21 @@ class BaseViewModel<VA> extends ChangeNotifier with InteractionMixin {
 
   void onBackToHome() {
     navigate(Routes.selection, clearStack: true);
+  }
+
+  int getSeason(String input) {
+    Iterable<Match> matches = exp.allMatches(input);
+    for (Match m in matches) {
+      return int.parse(m[1]!);
+    }
+    return 0;
+  }
+
+  int getEpisode(String input) {
+    Iterable<Match> matches = exp.allMatches(input);
+    for (Match m in matches) {
+      return int.parse(m[2]!);
+    }
+    return 0;
   }
 }

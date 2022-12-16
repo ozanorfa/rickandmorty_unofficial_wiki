@@ -1,6 +1,7 @@
 /// GENERATED CODE - DO NOT MODIFY BY HAND [gen_routes.dart]
 import 'package:flutter/material.dart';
 
+import '../views/episodes/episodes_view.dart';
 import '../views/selection/selection_view.dart';
 import '../views/splash/splash_view.dart';
 import '../views/warning/warning_view.dart';
@@ -12,6 +13,8 @@ Widget? createView(String route) {
       return const SplashView();
     case Routes.warning:
       return const WarningView();
+    case Routes.episodes:
+      return const EpisodesView();
     case Routes.selection:
       return const SelectionView();
     default:

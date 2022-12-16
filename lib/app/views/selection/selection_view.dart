@@ -19,29 +19,27 @@ class SelectionView extends StatelessWidget {
         appBar: AppBar(
           title: Text(AppStrings.appName),
         ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: context.horizontalPadding,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SelectionItemView(
-                    title: AppStrings.episodes,
-                    iconPath: AppAssets.uber,
-                    onPressed: viewModel.onPressedEpisodes),
-                SelectionItemView(
-                    title: AppStrings.characters,
-                    iconPath: AppAssets.reddit,
-                    onPressed: viewModel.onPressedCharacters),
-                SelectionItemView(
-                    title: AppStrings.locations,
-                    iconPath: AppAssets.maps,
-                    onPressed: viewModel.onPressedLocations),
-              ],
-            ),
+        body: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: context.horizontalPadding,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SelectionItemView(
+                  title: AppStrings.episodes,
+                  iconPath: AppAssets.uber,
+                  onPressed: viewModel.onPressedEpisodes),
+              SelectionItemView(
+                  title: AppStrings.characters,
+                  iconPath: AppAssets.reddit,
+                  onPressed: viewModel.onPressedCharacters),
+              SelectionItemView(
+                  title: AppStrings.locations,
+                  iconPath: AppAssets.maps,
+                  onPressed: viewModel.onPressedLocations),
+            ],
           ),
         ),
       ),

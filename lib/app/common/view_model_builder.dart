@@ -169,7 +169,7 @@ class _ViewModelBuilder<T extends ChangeNotifier>
               height: context.width / 2,
               child: const CircularProgressIndicator(
                 backgroundColor: Colors.transparent,
-                color: AppColors.lightBlue,
+                color: AppColors.primary,
               ),
             ),
             Image.asset(
@@ -177,7 +177,6 @@ class _ViewModelBuilder<T extends ChangeNotifier>
               width: context.width / 3,
               height: context.width / 3,
               alignment: Alignment.center,
-              color: AppColors.lightBlue,
             ),
           ],
         ),

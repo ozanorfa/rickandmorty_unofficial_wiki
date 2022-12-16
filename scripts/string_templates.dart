@@ -59,23 +59,4 @@ class {VIEW_NAME}View extends StatelessWidget {
   }
 }
 ''';
-
-  static const String deeplinkHeaderTemplate = '''
-<!--
-*** /// GENERATED FILE - DO NOT MODIFY BY HAND [gen_deeplink_document.dart]
--->
-
-# OlduBil Deeplink Documentation (v{APP_VERSION})
-
-This is the deeplink URL documentation of OlduBil.
-
-- **The flow:** `oldubil.com/` + `ROUTE_NAME` + `?` + `KEY1` + `=` + `VALUE1` + `&` + `KEY2` + `=` + `VALUE2` ...
-- **Example URLs:**
-  - `oldubil.com/invoiceSubscriptions`
-  - `oldubil.com/invoiceCategories?invoiceType=add`
-  - `oldubil.com/invoiceInstitutions?invoiceType=add&categoryId=3`
-''';
-
-  static const String htmlNewLine =
-      '<div style="page-break-after: always;"></div>';
 }

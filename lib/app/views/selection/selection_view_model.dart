@@ -3,11 +3,11 @@ import '../../routes/routes.dart';
 
 class SelectionViewModel extends BaseViewModel {
   @override
-  void onBindingCreated() {
-    // TODO: implement onBindingCreated
-  }
+  void onBindingCreated() {}
 
-  void onPressedEpisodes() {}
+  void onPressedEpisodes() {
+    navigate(Routes.episodes);
+  }
 
   void onPressedCharacters() {}
 

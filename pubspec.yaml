@@ -11,15 +11,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.2 # iOS components
   provider: ^6.0.4 # for state management
   internet_connection_checker: ^1.0.0+1 # for internet connection
+  retrofit: '>=3.0.0 <4.0.0' # Retrofit calls
+  http: ^0.13.5 # for networking
+  dio: ^4.0.6 # for networking
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  retrofit_generator: '>=4.0.0 <5.0.0'
+  build_runner: '>2.3.0 <4.0.0' 
+  json_serializable: '>4.4.0'
 
 
 flutter:
