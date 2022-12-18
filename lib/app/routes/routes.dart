@@ -5,4 +5,5 @@ class Routes {
   static const String warning = '/warning';
   static const String episodes = '/episodes';
   static const String selection = '/selection';
+  static const String episodeDetail = '/episodeDetail';
 }
