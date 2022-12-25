@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rickandmorty_unofficial_wiki/app/constants/app_strings.dart';
 import 'package:rickandmorty_unofficial_wiki/app/utils/enums/character_enum.dart';
@@ -37,16 +38,18 @@ class CharactersView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              child: ListView.builder(
-                controller: viewModel.listviewController,
-                itemCount: viewModel.resultCharactersList.length,
-                itemBuilder: (_, index) {
-                  final model = viewModel.resultCharactersList[index];
-                  return CharacterItemView(
-                    resultsCharacter: model,
-                    viewModel: viewModel,
-                  );
-                },
+              child: Scrollbar(
+                child: ListView.builder(
+                  controller: viewModel.listviewController,
+                  itemCount: viewModel.resultCharactersList.length,
+                  itemBuilder: (_, index) {
+                    final model = viewModel.resultCharactersList[index];
+                    return CharacterItemView(
+                      resultsCharacter: model,
+                      viewModel: viewModel,
+                    );
+                  },
+                ),
               ),
             ),
           ],

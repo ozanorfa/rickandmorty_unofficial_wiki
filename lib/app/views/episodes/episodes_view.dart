@@ -37,16 +37,18 @@ class EpisodesView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              child: ListView.builder(
-                controller: viewModel.listviewController,
-                itemCount: viewModel.resultEpisodeList.length,
-                itemBuilder: (_, index) {
-                  final model = viewModel.resultEpisodeList[index];
-                  return EpisodeItemView(
-                    viewModel: viewModel,
-                    model: model,
-                  );
-                },
+              child: Scrollbar(
+                child: ListView.builder(
+                  controller: viewModel.listviewController,
+                  itemCount: viewModel.resultEpisodeList.length,
+                  itemBuilder: (_, index) {
+                    final model = viewModel.resultEpisodeList[index];
+                    return EpisodeItemView(
+                      viewModel: viewModel,
+                      model: model,
+                    );
+                  },
+                ),
               ),
             ),
           ],

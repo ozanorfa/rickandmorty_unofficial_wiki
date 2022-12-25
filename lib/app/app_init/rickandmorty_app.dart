@@ -23,6 +23,7 @@ class RickAndMortyApp extends StatelessWidget {
     ]);
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: Themes.lightTheme,
       builder: _onTransitionBuilder,
       onGenerateRoute: onGenerateRoute,

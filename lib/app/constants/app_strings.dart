@@ -8,4 +8,11 @@ mixin AppStrings {
   static String episode = "Episode";
   static String season = "Season";
   static String appInfo = "Application Info";
+  static String apiRef = "API Reference";
+  static String apiName = "The Rick and Morty API";
+  static String iconRef = "Icon Reference";
+  static String iconName1 = "User";
+  static String iconName2 = "from Reddit";
+  static String iconName3 = "Reddit link here.";
+  static String version = "Version";
 }

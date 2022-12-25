@@ -1,6 +1,6 @@
 name: rickandmorty_unofficial_wiki
 description: A new Flutter project.
-version: 0.0.1+1
+version: 0.1.0+1
 
 
 publish_to: 'none' 
@@ -17,6 +17,8 @@ dependencies:
   retrofit: '>=3.0.0 <4.0.0' # Retrofit calls
   http: ^0.13.5 # for networking
   dio: ^4.0.6 # for networking
+  url_launcher: ^5.2.7 # for opening URL
+  package_info_plus: ^1.4.2 # for package info
 
 dev_dependencies:
   flutter_test:
