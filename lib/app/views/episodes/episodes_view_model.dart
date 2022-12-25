@@ -52,12 +52,14 @@ class EpisodesViewModel extends BaseViewModel {
   }
 
   void onItemTapped(int id) {
-    flow(() async {
+    //TODO: uncomment after implementation
+
+    /*flow(() async {
       ResultsEpisode resultsEpisode =
           await apiService.getSingleEpisode(id.toString());
       navigate(Routes.episodeDetail,
           args: EpisodeArgs(resultsEpisode: resultsEpisode));
-    });
+    });*/
   }
 
   @override

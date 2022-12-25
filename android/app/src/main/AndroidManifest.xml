@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rickandmorty_unofficial_wiki">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    
    <application
         android:label="Rick and Morty Unofficial Wiki"
         android:name="${applicationName}"

@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:rickandmorty_unofficial_wiki/app/themes/themes.dart';
 
 part 'results_episode.g.dart';
 

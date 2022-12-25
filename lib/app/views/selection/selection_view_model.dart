@@ -9,7 +9,9 @@ class SelectionViewModel extends BaseViewModel {
     navigate(Routes.episodes);
   }
 
-  void onPressedCharacters() {}
+  void onPressedCharacters() {
+    navigate(Routes.characters);
+  }
 
   void onPressedLocations() {}
 }
