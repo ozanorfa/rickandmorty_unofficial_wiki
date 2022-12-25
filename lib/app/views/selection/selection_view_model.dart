@@ -14,4 +14,8 @@ class SelectionViewModel extends BaseViewModel {
   }
 
   void onPressedLocations() {}
+
+  void onPressedInfoApp() {
+    navigate(Routes.appInfo);
+  }
 }

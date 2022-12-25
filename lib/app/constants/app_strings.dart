@@ -7,4 +7,5 @@ mixin AppStrings {
   static String warningConnectionDesc = "Please connect to internet.";
   static String episode = "Episode";
   static String season = "Season";
+  static String appInfo = "Application Info";
 }

@@ -18,6 +18,17 @@ class SelectionView extends StatelessWidget {
       builder: (context, viewModel) => ScaffoldView(
         appBar: AppBar(
           title: Text(AppStrings.appName),
+          actions: <Widget>[
+            Padding(
+                padding: EdgeInsets.only(right: context.smallPadding),
+                child: GestureDetector(
+                  onTap: viewModel.onPressedInfoApp,
+                  child: const Icon(
+                    Icons.info_outline,
+                    size: 26.0,
+                  ),
+                )),
+          ],
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(
