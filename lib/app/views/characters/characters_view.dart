@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:rickandmorty_unofficial_wiki/app/constants/app_strings.dart';
+import 'package:rickandmorty_unofficial_wiki/app/utils/enums/character_enum.dart';
 
 import '../../common/view_model_builder.dart';
 import '../../common/widgets/scaffold_view.dart';
+import '../../constants/app_colors.dart';
+import '../../services/model/results_character.dart';
 import '../../utils/extensions/context_extensions.dart';
 import 'characters_view_model.dart';
+part 'character_list_widget.dart';
 
 class CharactersView extends StatelessWidget {
   const CharactersView({Key? key}) : super(key: key);
@@ -29,18 +33,23 @@ class CharactersView extends StatelessWidget {
                 )),
           ],
         ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: context.horizontalPadding,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: ListView.builder(
+                controller: viewModel.listviewController,
+                itemCount: viewModel.resultCharactersList.length,
+                itemBuilder: (_, index) {
+                  final model = viewModel.resultCharactersList[index];
+                  return CharacterItemView(
+                    resultsCharacter: model,
+                    viewModel: viewModel,
+                  );
+                },
+              ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: const [
-                // START HERE
-              ],
-            ),
-          ),
+          ],
         ),
       ),
     );
