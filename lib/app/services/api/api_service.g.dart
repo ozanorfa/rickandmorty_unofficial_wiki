@@ -136,13 +136,13 @@ class _APIService implements APIService {
   }
 
   @override
-  Future<CharacterModel> getSingleCharacter(character) async {
+  Future<ResultsCharacter> getSingleCharacter(character) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<CharacterModel>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<ResultsCharacter>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -154,7 +154,53 @@ class _APIService implements APIService {
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = CharacterModel.fromJson(_result.data!);
+    final value = ResultsCharacter.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<LocationModel> getLocations() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<LocationModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/location',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = LocationModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<LocationModel> getLocationsWithPage(location) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<LocationModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/location?page=${location}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = LocationModel.fromJson(_result.data!);
     return value;
   }
 

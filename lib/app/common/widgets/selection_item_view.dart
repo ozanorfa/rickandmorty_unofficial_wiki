@@ -10,8 +10,8 @@ class SelectionItemView extends StatelessWidget {
     required this.title,
     required this.iconPath,
     required this.onPressed,
-    this.iconWidth = 65,
-    this.iconHeight = 65,
+    this.iconWidth = 70,
+    this.iconHeight = 70,
     this.iconColor,
   }) : super(key: key);
 
@@ -32,7 +32,7 @@ class SelectionItemView extends StatelessWidget {
         onTap: onPressed,
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.all(context.defaultPadding),
+          padding: EdgeInsets.all(context.selectionPadding),
           margin: const EdgeInsets.all(8),
           decoration: BoxDecoration(
               color: AppColors.primarySecond,
@@ -53,7 +53,7 @@ class SelectionItemView extends StatelessWidget {
                 height: iconHeight,
                 color: iconColor,
               ),
-              const SizedBox(width: 20),
+              const SizedBox(width: 25),
               Text(
                 title,
                 style: context.headline5?.copyWith(

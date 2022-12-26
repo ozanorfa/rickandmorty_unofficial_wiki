@@ -5,6 +5,7 @@ import '../views/app_info/app_info_view.dart';
 import '../views/characters/characters_view.dart';
 import '../views/episode_detail/episode_detail_view.dart';
 import '../views/episodes/episodes_view.dart';
+import '../views/locations/locations_view.dart';
 import '../views/selection/selection_view.dart';
 import '../views/splash/splash_view.dart';
 import '../views/warning/warning_view.dart';
@@ -20,6 +21,8 @@ Widget? createView(String route) {
       return const AppInfoView();
     case Routes.episodes:
       return const EpisodesView();
+    case Routes.locations:
+      return const LocationsView();
     case Routes.selection:
       return const SelectionView();
     case Routes.characters:

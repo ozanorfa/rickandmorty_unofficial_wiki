@@ -61,6 +61,8 @@ extension MediaQueryExtension on BuildContext {
 
   double get horizontalPadding => 10;
 
+  double get selectionPadding => 20;
+
   double get bottomPadding => mediaQuery.padding.bottom;
 
   double get rightPadding => mediaQuery.padding.right;

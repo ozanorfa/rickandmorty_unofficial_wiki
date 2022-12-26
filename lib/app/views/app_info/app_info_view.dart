@@ -30,6 +30,7 @@ class AppInfoView extends StatelessWidget {
                 horizontal: context.horizontalPadding,
                 vertical: context.horizontalPadding),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 InfoWidget(
