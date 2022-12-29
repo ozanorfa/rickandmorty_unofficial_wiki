@@ -37,24 +37,21 @@ class LocationsView extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: context.horizontalPadding,
           ),
-          child: Expanded(
-            child: Scrollbar(
-                child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      childAspectRatio:
-                          context.width / (context.height / 3 * 2),
-                    ),
-                    controller: viewModel.listviewController,
-                    itemCount: viewModel.resultLocationsList.length,
-                    itemBuilder: (_, index) {
-                      final model = viewModel.resultLocationsList[index];
-                      return LocationItemView(
-                        viewModel: viewModel,
-                        model: model,
-                      );
-                    })),
-          ),
+          child: Scrollbar(
+              child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    childAspectRatio: context.width / (context.height / 3 * 2),
+                  ),
+                  controller: viewModel.listviewController,
+                  itemCount: viewModel.resultLocationsList.length,
+                  itemBuilder: (_, index) {
+                    final model = viewModel.resultLocationsList[index];
+                    return LocationItemView(
+                      viewModel: viewModel,
+                      model: model,
+                    );
+                  })),
         ),
       ),
     );

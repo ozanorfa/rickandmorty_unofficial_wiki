@@ -7,7 +7,5 @@ import '../../common/base_view_model.dart';
 class EpisodeDetailViewModel extends BaseViewModel<EpisodeArgs> {
   ResultsEpisode get episode => args.resultsEpisode;
   @override
-  void onBindingCreated() {
-    episode.air_date;
-  }
+  void onBindingCreated() {}
 }
