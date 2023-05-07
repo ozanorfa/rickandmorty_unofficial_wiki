@@ -113,6 +113,32 @@ class _APIService implements APIService {
   }
 
   @override
+  Future<List<ResultsCharacter>> getCharactersById(character) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<ResultsCharacter>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/character/${character}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map(
+            (dynamic i) => ResultsCharacter.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return value;
+  }
+
+  @override
   Future<CharacterModel> getCharactersWithPage(page) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

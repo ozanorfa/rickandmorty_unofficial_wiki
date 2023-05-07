@@ -107,9 +107,10 @@ class EpisodeDetailView extends StatelessWidget {
                   child: Text(
                     'Air Date: ${viewModel.episode.air_date}',
                     style: context.headline6?.copyWith(
-                      color: AppColors.primarySecond,
+                      color: AppColors.white,
                       fontWeight: FontWeight.w500,
                     ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 const SizedBox(height: 8.0),
@@ -142,10 +143,8 @@ class EpisodeDetailView extends StatelessWidget {
                 const SizedBox(height: 8.0),
                 Center(
                   child: ElevatedButton(
-                    child: Text('View Characters'),
-                    onPressed: () {
-                      // Navigate to the character list screen
-                    },
+                    onPressed: viewModel.goToViewCharacters,
+                    child: const Text('View Characters'),
                   ),
                 ),
               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:rickandmorty_unofficial_wiki/app/services/model/character_model.dart';
+import 'package:rickandmorty_unofficial_wiki/app/views/characters/characters_args.dart';
 
 import '../../common/base_view_model.dart';
 import '../../services/model/info_model.dart';
@@ -7,11 +8,12 @@ import '../../services/model/results_character.dart';
 import '../../utils/enums/character_enum.dart';
 import '../../utils/shared.dart';
 
-class CharactersViewModel extends BaseViewModel {
+class CharactersViewModel extends BaseViewModel<CharacterArgs> {
   late CharacterModel characterModel;
-  late Info info;
+  Info? info;
   List<ResultsCharacter> resultCharactersList = [];
   ScrollController listviewController = ScrollController();
+  String? get characterIds => args.characterList;
 
   @override
   void onBindingCreated() {
@@ -27,15 +29,24 @@ class CharactersViewModel extends BaseViewModel {
 
   void getCharacters() {
     flow(() async {
-      characterModel = await apiService.getCharacters();
-      info = characterModel.info;
-      resultCharactersList.addAll(characterModel.results);
+      if (characterIds != null) {
+        var characterModel = await apiService.getCharactersById(characterIds!);
+
+        resultCharactersList.addAll(characterModel);
+      } else {
+        characterModel = await apiService.getCharacters();
+        info = characterModel.info;
+        resultCharactersList.addAll(characterModel.results);
+      }
     });
   }
 
   void getCharactersWithPage() {
     flow(() async {
-      String? nextLink = info.next;
+      if (info == null) {
+        return;
+      }
+      String? nextLink = info!.next;
       if (nextLink != null) {
         String character = nextLink.substring(nextLink.length - 1);
         characterModel = await apiService.getCharactersWithPage(character);

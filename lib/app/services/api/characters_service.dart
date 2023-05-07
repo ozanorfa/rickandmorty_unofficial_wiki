@@ -6,6 +6,10 @@ mixin CharactersService {
   @GET('/character')
   Future<CharacterModel> getCharacters();
 
+  @GET('/character/{characterList}')
+  Future<List<ResultsCharacter>> getCharactersById(
+      @Path("characterList") String character);
+
   @GET('/character?page={page}')
   Future<CharacterModel> getCharactersWithPage(@Path("page") String page);
 
